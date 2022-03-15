@@ -1,4 +1,5 @@
 # educational games
+<img src="https://img.shields.io/badge/bored-yes-critical?style=for-the-badge&logo=appveyor"/>
 made for epic education 100%
 ## Hosting
 fork this project and then either host it with a different provider or host with github pages <br>
