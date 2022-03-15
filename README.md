@@ -7,5 +7,5 @@ for github pages just like go to settings then pages and whatever
 ha ha ha **no**
 ## credits
 gba emulator was taken from [browncha023's github](https://github.com/Browncha023/GBA) (made very minor decoration changes) <br>
-cookie clicker was taken from [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/)'s source code (from Orteil)
+cookie clicker was taken from [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/)'s source code (original author: Orteil)
 
