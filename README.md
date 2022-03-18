@@ -1,5 +1,15 @@
-# educational games <img src="https://img.shields.io/badge/bored-yes-critical?style=for-the-badge&logo=appveyor"/>
+# educational games 100% no baseball hat<img src="https://img.shields.io/badge/bored-yes-critical?style=for-the-badge&logo=appveyor"/>
 made for epic education 100%
+## List of games
+- [x] Cookie Clicker
+- [x] A whole list of Game Boy Advance games
+- [x] 2048
+- [x] Tetris (WIP)
+- [ ] Nothing here, Be the first to suggest
+- [ ] Nothing here, Be the first to suggest
+- [ ] Nothing here, Be the first to suggest
+- [ ] Nothing here, Be the first to suggest
+- [ ] Nothing here, Be the first to suggest
 ## Hosting
 fork this project and then either host it with a different provider or host with github pages <br>
 for github pages just like go to settings then pages and whatever
