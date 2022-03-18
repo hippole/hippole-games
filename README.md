@@ -1,7 +1,5 @@
 # educational games 100% no baseball hat <img src="https://img.shields.io/badge/epic-hippo-9cf?style=for-the-badge&logo=appveyor"/>
-<img src="https://img.shields.io/badge/version-1.0-critical"/>
-<img src="https://img.shields.io/badge/games-4-orange"/>
-<img src="https://img.shields.io/badge/school-yes-yellow"/>
+<img src="https://img.shields.io/badge/version-1.0-critical"/><img src="https://img.shields.io/badge/games-4-orange"/><img src="https://img.shields.io/badge/school-yes-yellow"/>
 made for epic education 100%
 ## List of games
 - [x] Cookie Clicker
