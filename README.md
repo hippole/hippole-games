@@ -1,4 +1,4 @@
-# educational games 100% no baseball hat<img src="https://img.shields.io/badge/bored-yes-critical?style=for-the-badge&logo=appveyor"/>
+# educational games 100% no baseball hat <img src="https://img.shields.io/badge/epic-hippo-9cf?style=for-the-badge&logo=appveyor"/>
 made for epic education 100%
 ## List of games
 - [x] Cookie Clicker
