@@ -5,7 +5,7 @@ made for epic education 100%
 - [x] Cookie Clicker
 - [x] A whole list of Game Boy Advance games
 - [x] 2048
-- [x] Tetris (WIP)
+- [x] Tetris
 - [ ] Nothing here, Be the first to suggest
 - [ ] Nothing here, Be the first to suggest
 - [ ] Nothing here, Be the first to suggest
