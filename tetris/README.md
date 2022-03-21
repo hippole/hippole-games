@@ -1,4 +1,4 @@
-#_**not mine: credit goes to below author**_
+# _**not mine: credit goes to below author**_
 # Tetris
 
 This is a small html5 tetris game , written by pure javascript and html5 canvas,modular by browserify.
