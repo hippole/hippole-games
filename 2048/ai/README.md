@@ -1,4 +1,4 @@
-# not mine, credit goes to ovolve.
+# Note: _**not mine, credit goes to ovolve.**_
 
 # 2048 AI
 
