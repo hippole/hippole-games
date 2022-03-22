@@ -30,6 +30,8 @@ function GameManager(size, InputManager, Actuator) {
 
 // Restart the game
 GameManager.prototype.restart = function () {
+  this.storageManager.clearGameState();
+  this.actuator.continueGame(); // Clear the game won/lost message
   this.actuator.restart();
   this.running = false;
   this.actuator.setRunButton('Auto-run');
