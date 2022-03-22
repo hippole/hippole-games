@@ -37,6 +37,13 @@
 	(function(){
 		var tetris = new Tetris('tetris');
 		tetris.start();
+		//thanks stackoverflow
+		audio = new Audio('tetris.mp3'); 
+		audio.addEventListener('ended', function() {
+		    this.currentTime = 0;
+		    this.play();
+		}, false);
+		audio.play();
 	})();
 </script>
 </html>
