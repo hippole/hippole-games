@@ -7,12 +7,6 @@
         <style>
             body { 
                 background-color: powderblue; 
-            }
-            h1   { 
-                font-family: "Lucida Console", monospace; 
-                color: white;
-            }
-            h2   { 
                 font-family: "Lucida Console", monospace; 
                 color: white;
             }
@@ -27,9 +21,120 @@
 		    color:mediumpurple;
 	      }
 	    h3 {
-	        font-family: "Lucida Console", monospace; 
                 color: lightblue;
             }
+	    .fish {
+		  padding: 10px;
+		  border: 5px outset white;
+              background-color: lightgray; 
+		  color: #5D6D7E;
+		}
+	    .fishy0 {
+		  font-size:24px;
+		  color:#9B59B6;
+		}
+	    .fishy1 {
+		  color:#E74C3C;
+		}
+	    .fishy2 {
+		  color:#DC7633;
+		}
+	    .fishy3 {
+		  color:#D4AC0D;
+		}
+	    .fishy4 {
+		  color:#2ECC71;
+		}
+button {
+ font-family: "Lucida Console", monospace; 
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+ user-select: none;
+ touch-action: manipulation;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ filter: brightness(110%);
+}
+
+button:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+button:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
         </style>
     </head>
     <body>
@@ -224,8 +329,19 @@
               <li><a href="./launcher.html#nesgh1">NES Greatest Hits 1</a></li>
           </ul>
         </main>
-	    <h1>Small decoration by hippole</h1>
-      <h2>For Info On: Game Collections, Controls, And Some Other Cool Stuff. Check Out The Wiki: <a href="https://github.com/Browncha023/GBA/wiki" target="_blank"><img src="Binaries/here.png" alt="here"></a></h2>
-    	    <h1><a href="//hippole.github.io/">Back to home.</a></h1>
+		<p></p>
+		<div class="fish"><b>
+			<div class="fishy0"> Information<br><br></div>
+			<div class="fishy1"> Game Controls: D-Pad=arrow keys, B=z, X=a, L=a, R=s, Start=enter, and Select=shift.<br><br></div>
+			<div class="fishy2"> Game Collections: The Pokemon Collection Contains: All 7 Pokemon Games From The Gameboy and Gameboy Color.<br> The Mario Land Collection Contains: Mario Land 1&2. <br>The NES Greatest Hits 1 Contains: Tetris, Super Mario Bros, Metroid, Contra, The Legend Of Zelda, Zelda II: The Adventures Of Link, Donkey Kong, and Kirby's Adventure.<br><br></div>
+			<div class="fishy3"> While In The Game Collections Use L&R[A&S] At The Same Time To Open Up The NES/GB/GBC Emulator Settings.<br>This Is A GBA Emulator, But It Run A Few Other Consoles, Such As The GB, GBC, And NES.<br><br></div>
+			<div class="fishy4"> Extra: Mario Advance=SMB2, Mario Advance 2=SMW, Mario Advance 3=Yoshi's Island, and Mario Advance 4=SMB3.</div>
+		</b></div>
+	    <p></p>
+<button onclick="window.location.href='https://hippole.github.io/'">
+  <span class="shadow"></span>
+  <span class="edge"></span>
+  <span class="front text"> Return to main website </span>
+</button>  Decoration and revamp by hippole
 	</body>
 </html>
