@@ -189,7 +189,7 @@ var timerID = null;
 window.onload = function () {
     if (!games[location.hash.substr(1)]) {
 	  alert("Invalid Game Request! Redirecting to list of games");
-        window.location.href="htps://hippole.github.io/gba";
+        window.location ="htps://hippole.github.io/gba";
         return;
     }
     //Initialize Iodine:
