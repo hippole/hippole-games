@@ -188,8 +188,8 @@ var MixerInput = null;
 var timerID = null;
 window.onload = function () {
     if (!games[location.hash.substr(1)]) {
-        doucment.body.innerHTML = "<p>Uh oh!<br>Invalid Game Request!<br>Redirecting to list of games in 5 seconds</p>";
-        setTimeout(() => {window.location.href="htps://hippole.github.io/gba"}, 5000);
+	  alert("Invalid Game Request! Redirecting to list of games");
+        window.location.href="htps://hippole.github.io/gba";
         return;
     }
     //Initialize Iodine:
