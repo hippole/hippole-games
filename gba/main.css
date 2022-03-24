@@ -15,9 +15,6 @@ canvas {
 }
 span {
     color: deepskyblue;
-    bottom: 0px;
-    position: absolute;
-    display: none;
     font-size: 50pt;
     font-weight: bold;
     text-align: center;
