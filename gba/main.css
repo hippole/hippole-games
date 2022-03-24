@@ -14,14 +14,14 @@ canvas {
     height: 100%;
 }
 span {
-    color: blue;
+    color: deepskyblue;
     bottom: 0px;
     position: absolute;
     right: 0px;
     display: none;
-    font-size: 40pt;
+    font-size: 40px;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
     vertical-align: bottom;
     font-family: monospace;
     display:none;
