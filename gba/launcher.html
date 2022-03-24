@@ -3,25 +3,6 @@
     <head>
         <link rel="shortcut icon" href="Binaries/gb.ico">
         <title>GBA Emulator</title>
-        <style>
-            body {
-                background-color: coral;
-            }
-		span {
-		 font-family: "Lucida Console", monospace; 
-		 color: deepskyblue;
-		 bottom: 0px;
-		 position: absolute;
-		 right: 0px;
-		 display: none;
-		 font-size: 40pt;
-		 font-weight: bold;
-		 text-align: right;
-		 vertical-align: bottom;
-		 font-family: monospace;
-		 display:none;
-	    }
-        </style>
         <meta charset="UTF-8">
             <!--Required Scripts-->
             <script src="IodineGBA/includes/TypedArrayShim.js"></script>
@@ -77,6 +58,7 @@
             <script src="user_scripts/IodineGBAAudioGlueCode.js"></script>
             <script src="user_scripts/IodineGBACoreGlueCode.js"></script>
             <script src="user_scripts/base64.js"></script>
+            <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <canvas id="emulator_target" width="240px" height="160px"></canvas>
