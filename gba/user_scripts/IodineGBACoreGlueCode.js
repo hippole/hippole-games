@@ -188,7 +188,8 @@ var MixerInput = null;
 var timerID = null;
 window.onload = function () {
     if (!games[location.hash.substr(1)]) {
-        alert("Invalid game request!");
+        doucment.body.innerHTML = "<p>Uh oh!<br>Invalid Game Request!<br>Redirecting to list of games in 5 seconds</p>";
+        setTimeout(() => {window.location.href="htps://hippole.github.io/gba"}, 5000);
         return;
     }
     //Initialize Iodine:
@@ -215,7 +216,7 @@ function registerBIOS() {
 }
 function downloadROM(gamename) {
     Iodine.pause();
-    showTempString("Downloading \"" + games[gamename] + ".\"");
+    showTempString("Loading \"" + games[gamename] + ".\" :D");
     downloadFile("Binaries/" + gamename + ".gba", registerROM);
 }
 function registerROM() {
