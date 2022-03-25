@@ -125,7 +125,7 @@ localStorageSet=function(key,str)
 
 var ajax=function(url,callback)
 {
-	var httpRequest=new XMLHttpRequest();
+	/*var httpRequest=new XMLHttpRequest();
 	if (!httpRequest){return false;}
 	httpRequest.onreadystatechange=function()
 	{
@@ -142,7 +142,7 @@ var ajax=function(url,callback)
 	httpRequest.open('GET',url);
 	httpRequest.setRequestHeader('Content-Type','text/plain');
 	httpRequest.overrideMimeType('text/plain');
-	httpRequest.send();
+	httpRequest.send();*/
 	return true;
 }
 
@@ -2417,12 +2417,14 @@ Game.Launch=function()
 		
 		Game.GrabData=function()
 		{
-			if (!App) ajax('https://orteil.dashnet.org/cookieclicker/beta/patreon/grab.php',Game.GrabDataResponse);
+			//commented because most school proxies won't allow these requests to be made, else why are you here?
+			/*if (!App) ajax('https://orteil.dashnet.org/cookieclicker/beta/patreon/grab.php',Game.GrabDataResponse);
 			else App.grabData(function(res){
 				Game.heralds=res?(res.playersN||1):1;
 				Game.heralds=Math.max(0,Math.min(100,Math.ceil(Game.heralds/100*100)/100));
 				l('heraldsAmount').textContent=Game.heralds;
-			});
+			});*/
+			l('heraldsAmount').textContent=100;
 		}
 		Game.GrabDataResponse=function(response)
 		{
@@ -2489,7 +2491,7 @@ Game.Launch=function()
 				if (!App && Game.heralds==0) str+=loc("There are no heralds at the moment. Please consider <b style=\"color:#bc3aff;\">donating to our Patreon</b>!");
 				else
 				{
-					str+='<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">'+loc("%1 herald",Game.heralds)+'</b> '+loc("selflessly inspiring a boost in production for everyone, resulting in %1.",'<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div>'+loc("+%1% cookies per second",Game.heralds)+'</b>');
+					str+='<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">'+loc("%1 herald",Game.heralds)+'</b> '+loc(" because merry christmas, resulting in %1.",'<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div>'+loc("+%1% cookies per second",Game.heralds)+'</b>');
 					str+='<div class="line"></div>';
 					if (Game.ascensionMode==1) str+=loc("You are in a <b>Born again</b> run, and are not currently benefiting from heralds.");
 					else if (Game.Has('Heralds')) str+=loc("You own the <b>Heralds</b> upgrade, and therefore benefit from the production boost.");
