@@ -2485,8 +2485,10 @@ Game.Launch=function()
 		
 		Game.attachTooltip(l('heralds'),function(){
 			var str='';
+			var ew = false;
 			
-			if (!App && !Game.externalDataLoaded) str+=loc("Heralds couldn't be loaded. There may be an issue with our servers, or you are playing the game locally.");
+			//if (!App && !Game.externalDataLoaded) str+=loc("Heralds couldn't be loaded. There may be an issue with our servers, or you are playing the game locally.");
+			if (ew);
 			else
 			{
 				if (!App && Game.heralds==0) str+=loc("There are no heralds at the moment. Please consider <b style=\"color:#bc3aff;\">donating to our Patreon</b>!");
