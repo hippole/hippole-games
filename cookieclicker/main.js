@@ -2433,6 +2433,7 @@ Game.Launch=function()
 				response should be formatted as
 				{"herald":3,"grandma":"a|b|c|...}
 			*/
+			//commented because most school proxies won't allow these requests to be made, else why are you here?
 			/*var r={};
 			try{
 				r=JSON.parse(response);
@@ -2497,7 +2498,7 @@ Game.Launch=function()
 				if (ew);
 				else
 				{
-					str+='<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">'+loc("%1 herald",Game.heralds)+'</b> '+loc("selflessly inspiring a boost in production for everyone, resulting in %1.",'<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div>'+loc("+%1% cookies per second",Game.heralds)+loc("it's school and you're epic so free heralds")+'</b>');
+					str+='<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">'+loc("%1 herald",Game.heralds)+'</b> '+loc("selflessly inspiring a boost in production for everyone, resulting in %1.",'<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div>'+loc("+%1% cookies per second",Game.heralds)+'<b style="color:#daa520;text-shadow:0px 1px 0px #6d0096;">'+loc("(plus, it's school and you're epic so free heralds)")+'</b>');
 					str+='<div class="line"></div>';
 					if (Game.ascensionMode==1) str+=loc("You are in a <b>Born again</b> run, and are not currently benefiting from heralds.");
 					else if (Game.Has('Heralds')) str+=loc("You own the <b>Heralds</b> upgrade, and therefore benefit from the production boost.");
