@@ -2432,7 +2432,7 @@ Game.Launch=function()
 				response should be formatted as
 				{"herald":3,"grandma":"a|b|c|...}
 			*/
-			var r={};
+			/*var r={};
 			try{
 				r=JSON.parse(response);
 				if (typeof r['herald']!=='undefined')
@@ -2448,7 +2448,8 @@ Game.Launch=function()
 				
 				l('heraldsAmount').textContent=Game.heralds;
 				Game.externalDataLoaded=true;
-			}catch(e){}
+			}catch(e){}*/
+			l('heraldsAmount').textContent=100;
 		}
 		
 		
@@ -2491,7 +2492,7 @@ Game.Launch=function()
 				if (!App && Game.heralds==0) str+=loc("There are no heralds at the moment. Please consider <b style=\"color:#bc3aff;\">donating to our Patreon</b>!");
 				else
 				{
-					str+='<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">'+loc("%1 herald",Game.heralds)+'</b> '+loc(" because merry christmas, resulting in %1.",'<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div>'+loc("+%1% cookies per second",Game.heralds)+'</b>');
+					str+='<b style="color:#bc3aff;text-shadow:0px 1px 0px #6d0096;">'+loc("%1 herald",Game.heralds)+'</b> '+loc(" because it's school, resulting in %1.",'<br><b style="color:#cdaa89;text-shadow:0px 1px 0px #7c4532,0px 0px 6px #7c4532;"><div style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(img/money.png);"></div>'+loc("+%1% cookies per second",Game.heralds)+'</b>');
 					str+='<div class="line"></div>';
 					if (Game.ascensionMode==1) str+=loc("You are in a <b>Born again</b> run, and are not currently benefiting from heralds.");
 					else if (Game.Has('Heralds')) str+=loc("You own the <b>Heralds</b> upgrade, and therefore benefit from the production boost.");
