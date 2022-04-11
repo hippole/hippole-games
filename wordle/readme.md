@@ -1,1 +1,1 @@
-# not mine taken from [new york times](https://www.nytimes.com/games/wordle/index.html)
+# not mine taken from [wordleunlimited.org](https://wordleunlimited.org/)

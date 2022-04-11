@@ -22,4 +22,4 @@ cookie clicker was taken from [Cookie Clicker](https://orteil.dashnet.org/cookie
 gba emulator was taken from [browncha023's github](https://github.com/Browncha023/GBA) (made very minor decoration changes) <br>
 2048 was taken from [Gabriele Cirulli's github](https://github.com/gabrielecirulli/2048), 2048 AI taken from [ovolve's github](https://github.com/ovolve/2048-AI)<br>
 tetris was taken from [sandywalker's github](https://github.com/sandywalker/Tetris) (made very small decoration changes) <br>
-wordle was taken from [new york times](https://www.nytimes.com/games/wordle/index.html)
+wordle was taken from [wordleunlimited](https://wordleunlimited.org/)

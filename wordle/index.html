@@ -1,181 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>Wordle</title>
-    <meta name="apple-mobile-web-app-title" content="Wordle" />
-    <meta name="application-name" content="Wordle" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="sourceApp" content="games-crosswords" />
-    <meta
-      property="description"
-      content="Guess the hidden word in 6 tries. A new puzzle is available each day."
-    />
-    <meta property="og:title" content="Wordle" />
-    <meta property="og:url" content="https://hippole.com/wordle" />
-    <meta
-      property="og:description"
-      content="Guess the hidden word in 6 tries. A new puzzle is available each day."
-    />
-    <link rel="canonical" href="https://hippole.com/wordle/index.html" />
-    <link rel="manifest" href="manifest.json" />
-	<link href="./images/NYT-Wordle-Icon-32.png" rel="icon shortcut" sizes="3232" />
-    <link href="./images/NYT-Wordle-Icon-192.png" rel="apple-touch-icon" />
-
-    <style>
-      /* NYT Fonts */
-      @font-face {
-        font-family: 'nyt-karnakcondensed';
-        src: url('./fonts/karnakcondensed-normal-700.woff2') format('woff2'),
-          url('./fonts/karnakcondensed-normal-700.woff') format('woff');
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'nyt-franklin';
-        src: url('./fonts/franklin-normal-500.woff2') format('woff2'),
-          url('./fonts/franklin-normal-500.woff') format('woff');
-        font-weight: 500;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'nyt-franklin-700';
-        src: url('./fonts/franklin-normal-700.woff2') format('woff2'),
-          url('./fonts/franklin-normal-700.woff') format('woff');
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      /* Global Styles & Colors */
-      :root {
-        --green: #6aaa64;
-        --darkendGreen: #538d4e;
-        --yellow: #c9b458;
-        --darkendYellow: #b59f3b;
-        --lightGray: #d8d8d8;
-        --gray: #86888a;
-        --darkGray: #939598;
-        --white: #fff;
-        --black: #212121;
-        /* Colorblind colors */
-        --orange: #f5793a;
-        --blue: #85c0f9;
-        font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
-        font-size: 16px;
-        --header-height: 50px;
-        --keyboard-height: 200px;
-        --game-max-width: 500px;
-
-      }
-
-      /* Light theme colors */
-      :root {
-        --color-tone-1: #000000;
-        --color-tone-2: #787c7e;
-        --color-tone-3: #878a8c;
-        --color-tone-4: #d3d6da;
-        --color-tone-5: #edeff1;
-        --color-tone-6: #f6f7f8;
-        --color-tone-7: #ffffff;
-        --color-nav-hover: #f4f4f4;
-        --opacity-50: rgba(255, 255, 255, 0.5);
-      }
-
-      /* Dark Theme Colors */
-      .nightmode {
-        --color-tone-1: #ffffff;
-        --color-tone-2: #818384;
-        --color-tone-3: #565758;
-        --color-tone-4: #3a3a3c;
-        --color-tone-5: #272729;
-        --color-tone-6: #1a1a1b;
-        --color-tone-7: #121213;
-        --color-nav-hover: #2f2f31;
-        --opacity-50: rgba(0, 0, 0, 0.5);
-      }
-	  
-      /* Constant colors and colors derived from theme */
-      :root,
-      .nightmode {
-        --color-background: var(--color-tone-7);
-      }
-	  
-      :root {
-        --color-present: var(--yellow);
-        --color-correct: var(--green);
-        --color-absent: var(--color-tone-2);
-        --tile-text-color: var(--color-tone-7);
-        --key-text-color: var(--color-tone-1);
-        --key-evaluated-text-color: var(--color-tone-7);
-        --key-bg: var(--color-tone-4);
-        --key-bg-present: var(--color-present);
-        --key-bg-correct: var(--color-correct);
-        --key-bg-absent: var(--color-absent);
-        --modal-content-bg: var(--color-tone-7);
-      }
-      .nightmode {
-        --color-present: var(--darkendYellow);
-        --color-correct: var(--darkendGreen);
-        --color-absent: var(--color-tone-4);
-        --tile-text-color: var(--color-tone-1);
-        --key-text-color: var(--color-tone-1);
-        --key-evaluated-text-color: var(--color-tone-1);
-        --key-bg: var(--color-tone-2);
-        --key-bg-present: var(--color-present);
-        --key-bg-correct: var(--color-correct);
-        --key-bg-absent: var(--color-absent);
-        --modal-content-bg: var(--color-tone-7);
-      }
-      .colorblind {
-        --color-correct: var(--orange);
-        --color-present: var(--blue);
-        --tile-text-color: var(--white);
-        --key-bg-present: var(--color-present);
-        --key-bg-correct: var(--color-correct);
-        --key-bg-absent: var(--color-absent);
-      }
-
-      html {
-        height: 100%;
-      }
-      body {
-        height: 100%;
-        background-color: var(--color-background);
-        margin: 0;
-        padding: 0;
-        /* Prevent scrollbar appearing on page transition */
-        overflow-y: hidden;
-      }
-      .nav-item {
-        background-color: var(--color-nav-hover);
-      }
-      p.banner-text {
-        font-family: 'nyt-franklin' !important;
-      }
-      #pz-gdpr {
-        font-family: 'nyt-franklin-700' !important;
-      }
-    </style>
-  </head>
-  <body>
-    <script>
-      (function () {
-        // Defining the hash before the main bundle allows the bundle access window.hash
-        window.wordle = window.wordle || {};
-        window.wordle.hash = '3d28ac0c';
-      })();
-    </script>
-    <script src="main.3d28ac0c.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="./assets/gdpr/cookie-notice-v2.1.2.min.js"
-    ></script>
-    <game-app></game-app>
-  </body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+      <title>Wordle Unlimited</title>
+      <meta name="description" content="education">
+	  <link href="./images/NYT-Wordle-Icon-32.png" rel="icon shortcut" sizes="3232" />
+      <style>
+         /* Global Styles & Colors */
+         :root {
+         --green: #6aaa64;
+         --darkendGreen: #538d4e;
+         --yellow: #c9b458;
+         --darkendYellow: #b59f3b;
+         --lightGray: #d8d8d8;
+         --gray: #86888a;
+         --darkGray: #939598;
+         --white: #fff;
+         --black: #212121;
+         /* Colorblind colors */
+         --orange: #f5793a;
+         --blue: #85c0f9;
+         font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+         font-size: 16px;
+         --header-height: 50px;
+         --keyboard-height: 200px;
+         --game-max-width: 500px;
+         }
+         /* Light theme colors */
+         :root {
+         --color-tone-1: #1a1a1b;
+         --color-tone-2: #787c7e;
+         --color-tone-3: #878a8c;
+         --color-tone-4: #d3d6da;
+         --color-tone-5: #edeff1;
+         --color-tone-6: #f6f7f8;
+         --color-tone-7: #ffffff;
+         --opacity-50: rgba(255, 255, 255, 0.5);
+         }
+         /* Dark Theme Colors */
+         .nightmode {
+         --color-tone-1: #d7dadc;
+         --color-tone-2: #818384;
+         --color-tone-3: #565758;
+         --color-tone-4: #3a3a3c;
+         --color-tone-5: #272729;
+         --color-tone-6: #1a1a1b;
+         --color-tone-7: #121213;
+         --opacity-50: rgba(0, 0, 0, 0.5);
+         }
+         /* Constant colors and colors derived from theme */
+         :root,
+         .nightmode {
+         --color-background: var(--color-tone-7);
+         }
+         :root {
+         --color-present: var(--yellow);
+         --color-correct: var(--green);
+         --color-absent: var(--color-tone-2);
+         --tile-text-color: var(--color-tone-7);
+         --key-text-color: var(--color-tone-1);
+         --key-evaluated-text-color: var(--color-tone-7);
+         --key-bg: var(--color-tone-4);
+         --key-bg-present: var(--color-present);
+         --key-bg-correct: var(--color-correct);
+         --key-bg-absent: var(--color-absent);
+         --modal-content-bg: var(--color-tone-7);
+         }
+         .nightmode {
+         --color-present: var(--darkendYellow);
+         --color-correct: var(--darkendGreen);
+         --color-absent: var(--color-tone-4);
+         --tile-text-color: var(--color-tone-1);
+         --key-text-color: var(--color-tone-1);
+         --key-evaluated-text-color: var(--color-tone-1);
+         --key-bg: var(--color-tone-2);
+         --key-bg-present: var(--color-present);
+         --key-bg-correct: var(--color-correct);
+         --key-bg-absent: var(--color-absent);
+         --modal-content-bg: var(--color-tone-7);
+         }
+         .colorblind {
+         --color-correct: var(--orange);
+         --color-present: var(--blue);
+         --tile-text-color: var(--white);
+         --key-bg-present: var(--color-present);
+         --key-bg-correct: var(--color-correct);
+         --key-bg-absent: var(--color-absent);
+         }
+         html {
+         height: 100%;
+         }
+         body {
+         height: 100%;
+         background-color: var(--color-background);
+         margin: 0;
+         padding: 0;
+         /* Prevent scrollbar appearing on page transition 
+         overflow-y: hidden;
+         */
+         }
+      </style>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7330366239032869"
+		crossorigin="anonymous"></script>
+   </head>
+   <body>
+<script>  
+      <script>
+         (function () {
+             // Defining the hash before the main bundle allows the bundle access window.hash
+             window.wordle = window.wordle || {};
+             window.wordle.hash = 'e65ce0a5';
+         })();
+      </script>
+      <script src="main.js"></script>
+      <game-app></game-app>
+      <style>
+         .instructions {
+         margin: auto;
+         width: 90%;
+         font-size: 16px;
+         color: var(--color-tone-1)
+         }
+         .examples {
+         border-bottom: 1px solid var(--color-tone-4);
+         border-top: 1px solid var(--color-tone-4);
+         }
+         .example {
+         margin-top: 24px;
+         margin-bottom: 24px;
+         }
+         game-tile {
+         width: 40px;
+         height: 40px;
+         }
+         :host([page]) section {
+         padding: 16px;
+         padding-top: 0px;
+         }
+         .instructions li {
+        padding: .4em 1em;
+    	list-style: none;
+        
+        border-radius: 1em;
+    	
+        margin: .4em 0;
+        font-size: 1.2em;
+        border: 1px #e2e2e2 solid;
+        }
+      </style>
+      <section>
+         <div class="instructions">
+            <h1>Wordle Unlimited</h1>
+            <hr>
+            <p>Guess the hidden word in 6 tries.</p>
+            <p>Each guess must be a valid 5 letter word, you cannot enter random letters. Hit the enter button to submit the guess.</p>
+            <p>After your submission, the color of the tiles will change as in the examples below.</p>
+            <div class="examples">
+               <p><strong>Examples</strong></p>
+               <div class="example">
+                  <div class="row">
+                     <game-tile letter="g" evaluation="correct" reveal=""></game-tile>
+                     <game-tile letter="a"></game-tile>
+                     <game-tile letter="m"></game-tile>
+                     <game-tile letter="e"></game-tile>
+                     <game-tile letter="s"></game-tile>
+                  </div>
+                  <p>The letter <strong>G</strong> is in the word and in the correct spot.</p>
+               </div>
+               <div class="example">
+                  <div class="row">
+                     <game-tile letter="h"></game-tile>
+                     <game-tile letter="o" evaluation="present" reveal=""></game-tile>
+                     <game-tile letter="t"></game-tile>
+                     <game-tile letter="e"></game-tile>
+                     <game-tile letter="l"></game-tile>
+                  </div>
+                  <p>The letter <strong>O</strong> is in the word but in the wrong spot.</p>
+               </div>
+               <div class="example">
+                  <div class="row">
+                     <game-tile letter="m"></game-tile>
+                     <game-tile letter="o"></game-tile>
+                     <game-tile letter="n"></game-tile>
+                     <game-tile letter="e" evaluation="absent" reveal=""></game-tile>
+                     <game-tile letter="y"></game-tile>
+                  </div>
+                  <p>The letter <strong>E</strong> is not in the word in any spot at all.</p>
+               </div>
+            </div>
+            <div class="examples">
+               <h2>Wordle Rules. How to play Wordle.</h2>
+               <p>In wordle you have to guess a 5 letter word, “the hidden word”. 
+                  There are versions of this game in which you have to guess 6 letter words or even 7 letters words, but the most popular is the 5 letter word game. 
+               </p>
+               <p>You have to guess the word in 6 tries. <br>
+                  You begin by typing a word, it has to be a real word found on the dictionary. Once you type in your guess and click Enter your guess is going to be submitted. The background of the letters will change color
+               </p>
+               <ul>
+                  <li>If the letter is in the word and in the right spot, it will turn green.</li>
+                  <li>If the letter is in the word, but not on the right spot, it will turn yellow.</li>
+                  <li>If the letter turns gray, the letter is not in the word at all.</li>
+               </ul>
+               <p>The best strategy is to begin with a word that has many vowels. Some find it helpful to begin with the word IRATE or ARISE. </p>
+               <p>If you want to erase your guess you can click the backspace button. As said, it has to be a real word, one which you can find in a dictionary, otherwise you will get an alert.</p>
+               <p>If you find the correct word, a popup window will appear with your statistics. You can choose to share the results with your friends or have the option to play again.</p>
+            </div>
+         </div>
+      </section>
+   </body>
 </html>
