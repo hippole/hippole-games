@@ -6,7 +6,7 @@ made for epic education 100%
 - [x] A whole list of Game Boy Advance games
 - [x] 2048
 - [x] Tetris
-- [x] Wordle
+- [x] Wordle Unlimited
 - [ ] Nothing here, Be the first to suggest
 - [ ] Nothing here, Be the first to suggest
 - [ ] Nothing here, Be the first to suggest
