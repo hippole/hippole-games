@@ -188,7 +188,7 @@ var MixerInput = null;
 var timerID = null;
 window.onload = function () {
     if (!games[location.hash.substr(1)]) {
-        window.location.href = "https://hippole.github.io/gba/invalidgame.html";
+        window.location.href = "https://hippole.com/gba/invalidgame.html";
         return;
     }
     //Initialize Iodine:
